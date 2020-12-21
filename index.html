@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue first project</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- learning v-bind -->
+        <img v-bind:src="src" v-bind:alt="alt">
+        <hr>
+        <a v-bind:href="link">Click me</a>
+        <!-- end learning v-bind -->
+
+        <!-- learning v-text -->
+            <p v-text="myText"></p>
+            <p v-text="myWrite"></p>
+        <!-- end learning v-text -->
+
+        <!-- learning v-text -->
+            <p v-html="myStrong"></p>
+        <!-- end learning v-text -->
+        <hr>
+
+        <!--conditional rendering starts here -->
+        <Template v-if="age >= allowAge">
+            <p>You are good to go</p>
+            <p>You are good to go</p>
+        </Template>
+
+        <p v-else>
+            You are not good to go
+        </p>
+
+        <p v-show="user === 'Redoy'">
+            Show it
+        </p>
+        <p v-show="user!== 'Redoy'" >
+            Don't show it
+        </p>
+        <!--conditional rendering ends here -->
+
+        <!-- loop start -->
+        <h1>Loop Start</h1>
+        <hr>
+        <p v-for="(index,key,car) in cars">
+            {{car}}: {{key}}: {{index}}
+        </p>
+        <!-- loop end -->
+        <h1>learning v-once</h1>
+        <hr>
+        <!-- learning v-once start -->
+        <h2>{{name}}</h2>
+        {{update()}}
+        <!-- learning v-once end -->
+    </div>
+
+<script src="app.js" ></script>
+</body>
+</html>
